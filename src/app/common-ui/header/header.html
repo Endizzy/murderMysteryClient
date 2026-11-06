@@ -1,0 +1,17 @@
+<header class="header" [class.is-scrolled]="scrolled()">
+    <!-- <a class="wordmark" href="#top" (click)="closeMenu()">Полуночный отдел</a> -->
+    <nav id="site-nav" class="nav" [class.is-open]="menuOpen()" aria-label="Основное">
+      <a href="#cases" (click)="closeMenu()">Дела</a>
+      <a href="#how" (click)="closeMenu()">Как играть</a>
+      <a href="#questions" (click)="closeMenu()">Вопросы</a>
+      <a class="btn btn-sm" href="#desk" (click)="closeMenu()">Сесть за стол</a>
+    </nav>
+    
+    <img class="wordmark" src="/images/logoNew.png" alt="Полуночный отдел" />
+
+    <nav id="site-nav" class="nav" [class.is-open]="menuOpen()" aria-label="Основное">
+      <a href="#" (click)="closeMenu()">Логин</a>
+      <a href="#" (click)="closeMenu()">Регистрация</a>
+    
+    </nav>
+  </header>

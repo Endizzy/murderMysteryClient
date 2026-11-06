@@ -1,0 +1,403 @@
+<a class="skip" href="#desk">К столу</a>
+
+<div class="page" id="top">
+  <div class="atmosphere" aria-hidden="true">
+    <div class="vignette"></div>
+    <div class="grain"></div>
+    <div class="shaft"></div>
+    <div class="shadow-pass"></div>
+    <div class="torch"></div>
+    @for (mote of motes; track mote.id) {
+      <span
+        class="mote"
+        [style.left.%]="mote.left"
+        [style.animation-duration.s]="mote.duration"
+        [style.animation-delay.s]="mote.delay"
+        [style.width.px]="mote.size"
+        [style.height.px]="mote.size"
+      ></span>
+    }
+  </div>
+  <app-header />
+
+
+  <section class="hero" aria-labelledby="promise">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="lamp" aria-hidden="true"></div>
+
+    <div class="hero-copy">
+      <div class="hero-kicker">
+        <span>дело 00</span>
+        <span>город ещё не назван</span>
+      </div>
+      <h1 id="promise">
+        <span class="line">Каждая ложь</span>
+        <span class="line">оставляет <em>след</em></span>
+      </h1>
+      <p class="lead">
+        Полуночный отдел — расследование в браузере. Город, свидетели, письма и документы.
+        Правду собираете вы: один или компанией, даже из разных комнат.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-glow" href="#desk">Сесть за стол</a>
+        <a class="btn btn-ghost" href="#how">Как играть</a>
+      </div>
+      <ul class="chips">
+        <li>1 или компания</li>
+        <li>около вечера</li>
+        <li>прямо в браузере</li>
+      </ul>
+    </div>
+
+    <div class="reel">
+      <div class="cinema-line" aria-hidden="true"></div>
+      <div class="reel-track">
+        @for (copy of [false, true]; track copy) {
+          <div class="reel-set" [attr.aria-hidden]="copy ? true : null">
+            <figure>
+              <div class="shot shot-hall"></div>
+              <figcaption>коридор, 00:12</figcaption>
+            </figure>
+            <figure>
+              <div class="shot shot-desk"></div>
+              <figcaption>чужой стол</figcaption>
+            </figure>
+            <figure>
+              <div class="shot shot-note"></div>
+              <figcaption>записка без подписи</figcaption>
+            </figure>
+            <figure>
+              <div class="shot shot-window"></div>
+              <figcaption>кто смотрел?</figcaption>
+            </figure>
+          </div>
+        }
+      </div>
+      <div class="cinema-line" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="inside" aria-labelledby="inside-title">
+    <div class="section-head">
+      <h2 id="inside-title">Что лежит в деле</h2>
+      <p>На стол приходит папка. Внутри город, люди и бумаги. Где-то между ними — тот, кто солгал.</p>
+    </div>
+
+    <div class="dossier">
+      <article class="sheet">
+        <p class="sheet-label">Дело №</p>
+        <p class="sheet-no">00</p>
+        <dl>
+          <div><dt>Город</dt><dd>ещё не назван</dd></div>
+          <div><dt>Статус</dt><dd>архив</dd></div>
+          <div><dt>Места</dt><dd>появятся с сюжетом</dd></div>
+          <div><dt>Подозреваемые</dt><dd>ждут вопросов</dd></div>
+          <div><dt>Улики</dt><dd>0</dd></div>
+          <div><dt>Время</dt><dd>один вечер</dd></div>
+          <div><dt>Финальные вопросы</dt><dd>когда дело откроют</dd></div>
+        </dl>
+        <p class="hand">Начните с пустого стола. Не верьте тишине.</p>
+        <p class="classified">закрыто</p>
+      </article>
+
+      <div class="features">
+        <article>
+          <figure class="still">
+            <div class="shot shot-map"></div>
+            <figcaption>кто здесь был?</figcaption>
+          </figure>
+          <h3><i></i>Город на плане</h3>
+          <p>Кафе, подъезды, чужая квартира. Куда идти — решаете вы, не подсказка.</p>
+        </article>
+        <article>
+          <figure class="still">
+            <div class="shot shot-face"></div>
+            <figcaption>соседи видели</figcaption>
+          </figure>
+          <h3><i></i>Подозреваемые</h3>
+          <p>Спрашивайте о том, что уже нашли. Каждый прячет свою строчку.</p>
+        </article>
+        <article>
+          <figure class="still">
+            <div class="shot shot-letter"></div>
+            <figcaption>стёртые письма</figcaption>
+          </figure>
+          <h3><i></i>Письма и бумаги</h3>
+          <p>Чеки, сообщения, фото. Всё оседает в одной папке и меняет следующий вопрос.</p>
+        </article>
+        <article>
+          <figure class="still">
+            <div class="shot shot-seal"></div>
+            <figcaption>главный след</figcaption>
+          </figure>
+          <h3><i></i>Приговор</h3>
+          <p>В конце называете, кто и зачем. Отдел сверяет ответ, а не выдаёт его раньше.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cases reveal" id="cases" aria-labelledby="cases-title">
+    <div class="section-head">
+      <h2 id="cases-title">Открытые дела</h2>
+      <p>У каждого дела свой город. Пока архив пуст: место за столом уже можно занять.</p>
+    </div>
+    <div class="case-grid">
+      <article class="case">
+        <div class="case-cover">
+          <div class="shot shot-hall"></div>
+          <div class="case-over">
+            <p>Архив · 16+</p>
+            <h3>Пустой стол</h3>
+          </div>
+        </div>
+        <div class="case-body">
+          <p>Первый сюжет ещё не положили в папку. Обложка ждёт название, город и того, кто солжёт первым.</p>
+          <p class="case-meta"><span>скоро</span><span>1–6</span><span>вечер</span><span>RU</span></p>
+          <p class="case-note">подсказки будут в деле</p>
+          <div class="case-buy">
+            <p>В архиве</p>
+            <a class="btn btn-ghost case-btn" href="#inside">Смотреть папку</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-cover">
+          <div class="shot shot-desk"></div>
+          <div class="case-over">
+            <p>Одному · 16+</p>
+            <h3>Ночь на одного</h3>
+          </div>
+        </div>
+        <div class="case-body">
+          <p>Тихий стол. Пометки на полях видите только вы — как детектив, который не зовёт никого в кабинет.</p>
+          <p class="case-meta"><span>сейчас</span><span>1</span><span>вечер</span><span>RU</span></p>
+          <p class="case-note">без компании</p>
+          <div class="case-buy">
+            <p>Свободно</p>
+            <a class="btn btn-glow case-btn" href="#desk" (click)="choose('solo')">Сесть одному</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-cover">
+          <div class="shot shot-window"></div>
+          <div class="case-over">
+            <p>Компания · 16+</p>
+            <h3>Общий кабинет</h3>
+          </div>
+        </div>
+        <div class="case-body">
+          <p>Один код на всех, кого зовёте. Пока комнаты живут в этом браузере — общий сервер подключится вместе с первым делом.</p>
+          <p class="case-meta"><span>сейчас</span><span>2–6</span><span>вечер</span><span>RU</span></p>
+          <p class="case-note">код кабинета</p>
+          <div class="case-buy">
+            <p>По коду</p>
+            <a class="btn btn-glow case-btn" href="#desk" (click)="choose('host')">Открыть кабинет</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section how reveal" id="how" aria-labelledby="how-title">
+    <div class="section-head">
+      <h2 id="how-title">Как это идёт</h2>
+      <p>Начать легко. Дальше вечер уже не отпускает — с ноутбука или телефона, рядом или порознь.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <span>1</span>
+        <h3>Займите место</h3>
+        <p>Одному или кодом. Игра открывается сразу в браузере.</p>
+      </li>
+      <li>
+        <span>2</span>
+        <h3>Позовите своих</h3>
+        <p>Короткий код кабинета. Спорьте, кто врёт, не вставая из-за стола.</p>
+      </li>
+      <li>
+        <span>3</span>
+        <h3>Собирайте улики</h3>
+        <p>Загадка не отдаёт ответ. Она только сдвигает следующий вопрос.</p>
+      </li>
+      <li>
+        <span>4</span>
+        <h3>Назовите виновного</h3>
+        <p>Когда появится сюжет, финал сверит, кого вы выбрали и зачем.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section whom reveal" aria-labelledby="whom-title">
+    <h2 id="whom-title">Одному, своим, по коду</h2>
+    <ul class="modes">
+      <li>
+        <h3>Одному</h3>
+        <p>Только вы и папка. Как роман, который нельзя отложить до утра.</p>
+        <b>1</b>
+      </li>
+      <li>
+        <h3>Своим</h3>
+        <p>Вечер вместо кино: подозревать, перебивать, сходиться на одном имени.</p>
+        <b>2–6</b>
+      </li>
+      <li>
+        <h3>По коду</h3>
+        <p>Вас уже ждут. Введите код кабинета и садитесь к чужим пометкам.</p>
+        <b>код</b>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section faq reveal" id="questions" aria-labelledby="faq-title">
+    <h2 id="faq-title">Вопросы</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button type="button" [attr.aria-expanded]="faqOpen() === 0" (click)="toggleFaq(0)">
+          Нужно ли что-то скачивать?
+          <span aria-hidden="true">{{ faqOpen() === 0 ? '–' : '+' }}</span>
+        </button>
+        <div class="faq-panel" [class.is-open]="faqOpen() === 0">
+          <p>Нет. Отдел открывается в браузере на ноутбуке, планшете или телефоне.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" [attr.aria-expanded]="faqOpen() === 1" (click)="toggleFaq(1)">
+          Сколько человек за столом?
+          <span aria-hidden="true">{{ faqOpen() === 1 ? '–' : '+' }}</span>
+        </button>
+        <div class="faq-panel" [class.is-open]="faqOpen() === 1">
+          <p>Один — или компания, которой вы отдаёте код кабинета. Сюжеты рассчитаны на общий разговор, не на толпу.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" [attr.aria-expanded]="faqOpen() === 2" (click)="toggleFaq(2)">
+          Где сами дела?
+          <span aria-hidden="true">{{ faqOpen() === 2 ? '–' : '+' }}</span>
+        </button>
+        <div class="faq-panel" [class.is-open]="faqOpen() === 2">
+          <p>Их ещё пишут. Приёмная уже принимает тех, кто сядет за стол, когда первая папка выйдет из архива.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" [attr.aria-expanded]="faqOpen() === 3" (click)="toggleFaq(3)">
+          Код с другого компьютера сработает?
+          <span aria-hidden="true">{{ faqOpen() === 3 ? '–' : '+' }}</span>
+        </button>
+        <div class="faq-panel" [class.is-open]="faqOpen() === 3">
+          <p>Пока код живёт в браузере, где кабинет открыли. Общая комната между разными компьютерами появится вместе с сервером.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final reveal" id="desk" aria-labelledby="desk-title">
+    <div>
+      <p class="eyebrow">[ стол 00 ]</p>
+      <h2 id="desk-title">След уже есть. Сядьте.</h2>
+      <p class="lead final-lead">Первое дело ещё в архиве. Место можно занять сейчас: одному, своим кодом или чужим.</p>
+    </div>
+
+    <form class="pass" (submit)="submit($event)">
+      @if (phase() === 'idle' || phase() === 'unknown') {
+        <fieldset>
+          <legend class="sr-only">Как сесть за стол</legend>
+          <label class="choice">
+            <input type="radio" name="seat" value="solo" [checked]="seat() === 'solo'" (change)="choose('solo')" />
+            <span><strong>Одному</strong><small>Пометки видите только вы.</small></span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="seat" value="host" [checked]="seat() === 'host'" (change)="choose('host')" />
+            <span><strong>Своим</strong><small>Откройте кабинет и отдайте код.</small></span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="seat" value="guest" [checked]="seat() === 'guest'" (change)="choose('guest')" />
+            <span><strong>По коду</strong><small>Вас уже ждут за столом.</small></span>
+          </label>
+        </fieldset>
+
+        @if (seat() === 'guest') {
+          <label class="code-field" for="room-code">
+            Код кабинета
+            <input
+              id="room-code"
+              type="text"
+              maxlength="8"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="N-7K2P"
+              [value]="code()"
+              [attr.aria-invalid]="phase() === 'unknown'"
+              (input)="onCode($event)"
+            />
+          </label>
+        }
+
+        @if (phase() === 'unknown') {
+          <p class="notice" role="alert">Такого кабинета в этом браузере нет. Проверьте код или откройте свой.</p>
+        }
+
+        <button class="btn btn-glow submit" type="submit">
+          @switch (seat()) {
+            @case ('host') { Открыть кабинет }
+            @case ('guest') { Сесть по коду }
+            @default { Сесть одному }
+          }
+        </button>
+      } @else {
+        <div class="result" role="status">
+          @switch (phase()) {
+            @case ('solo') {
+              <p class="eyebrow">Стол на одного</p>
+              <p class="result-title">Место ваше.</p>
+              <p>Папка ещё в архиве. Когда её положат на стол, начнёте без лишних глаз.</p>
+            }
+            @case ('host') {
+              <p class="eyebrow">Кабинет открыт</p>
+              <p class="result-title">{{ room() }}</p>
+              <p>Код записан в этом браузере. Передайте его тем, кто сядет в том же окне.</p>
+              <button class="btn btn-ghost copy" type="button" (click)="copyRoom()">
+                {{ copied() ? 'Код скопирован' : 'Скопировать код' }}
+              </button>
+              @if (copyFailed()) {
+                <p class="notice" role="alert">Скопируйте код вручную: буфер обмена недоступен.</p>
+              }
+            }
+            @case ('guest') {
+              <p class="eyebrow">Вы в кабинете</p>
+              <p class="result-title">{{ room() }}</p>
+              <p>Стул ваш. Дело начнётся, когда на стол положат первый сюжет.</p>
+            }
+          }
+        </div>
+        <button class="btn btn-ghost submit" type="button" (click)="backToDesk()">Вернуться к листу</button>
+      }
+    </form>
+  </section>
+
+  <footer class="footer reveal">
+    <div>
+      <p class="wordmark footer-mark">Полуночный отдел</p>
+      <p>Расследование в браузере. Улики, разговоры, приговор.</p>
+    </div>
+    <nav aria-label="Разделы">
+      <h3>Разделы</h3>
+      <a href="#cases">Дела</a>
+      <a href="#how">Как играть</a>
+      <a href="#desk">Стол</a>
+      <a href="#questions">Вопросы</a>
+    </nav>
+    <div>
+      <h3>Стол</h3>
+      <p>Одному или по коду кабинета.</p>
+    </div>
+    <div>
+      <h3>Архив</h3>
+      <p>Сюжеты ещё пишутся. Приёмная уже открыта.</p>
+    </div>
+    <p class="legal">© {{ year }} · Полуночный отдел</p>
+  </footer>
+</div>

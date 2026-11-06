@@ -1,0 +1,77 @@
+.header {
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    height: var(--header-h);
+    padding-inline: var(--m);
+    transition: background-color 0.35s var(--ease), backdrop-filter 0.35s var(--ease);
+  }
+  
+  .header.is-scrolled {
+    background: rgb(11 14 18 / 78%);
+    backdrop-filter: blur(16px);
+  }
+  
+  .wordmark {
+    position: relative;
+    z-index: 7;
+    justify-self: center;
+    width: auto;
+    height: 52px;
+    object-fit: contain;
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 1.45rem;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-decoration: none;
+  }
+  
+  .header > .nav:first-of-type {
+    justify-self: start;
+  }
+  
+  .header > .nav:last-of-type {
+    justify-self: end;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .nav a:not(.btn) {
+    color: var(--ink);
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  
+  .nav a:not(.btn):hover {
+    color: var(--accent-hi);
+  }
+
+  .btn-sm {
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .btn-sm:hover {
+    transform: translateY(-3px);
+  }
+  

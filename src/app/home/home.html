@@ -19,63 +19,7 @@
     }
   </div>
   <app-header />
-
-
-  <section class="hero" aria-labelledby="promise">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="lamp" aria-hidden="true"></div>
-
-    <div class="hero-copy">
-      <div class="hero-kicker">
-        <span>дело 00</span>
-        <span>город ещё не назван</span>
-      </div>
-      <h1 id="promise">
-        <span class="line">Каждая ложь</span>
-        <span class="line">оставляет <em>след</em></span>
-      </h1>
-      <p class="lead">
-        Полуночный отдел — расследование в браузере. Город, свидетели, письма и документы.
-        Правду собираете вы: один или компанией, даже из разных комнат.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-glow" href="#desk">Сесть за стол</a>
-        <a class="btn btn-ghost" href="#how">Как играть</a>
-      </div>
-      <ul class="chips">
-        <li>1 или компания</li>
-        <li>около вечера</li>
-        <li>прямо в браузере</li>
-      </ul>
-    </div>
-
-    <div class="reel">
-      <div class="cinema-line" aria-hidden="true"></div>
-      <div class="reel-track">
-        @for (copy of [false, true]; track copy) {
-          <div class="reel-set" [attr.aria-hidden]="copy ? true : null">
-            <figure>
-              <div class="shot shot-hall"></div>
-              <figcaption>коридор, 00:12</figcaption>
-            </figure>
-            <figure>
-              <div class="shot shot-desk"></div>
-              <figcaption>чужой стол</figcaption>
-            </figure>
-            <figure>
-              <div class="shot shot-note"></div>
-              <figcaption>записка без подписи</figcaption>
-            </figure>
-            <figure>
-              <div class="shot shot-window"></div>
-              <figcaption>кто смотрел?</figcaption>
-            </figure>
-          </div>
-        }
-      </div>
-      <div class="cinema-line" aria-hidden="true"></div>
-    </div>
-  </section>
+  <app-hero />
 
   <section class="section reveal" id="inside" aria-labelledby="inside-title">
     <div class="section-head">

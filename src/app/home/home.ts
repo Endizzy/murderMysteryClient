@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, inject, OnDestroy, signal } from '@angular/core';
 import { Header } from '../common-ui/header/header';
+import { Hero } from '../common-ui/hero/hero';
 
 type Seat = 'solo' | 'host' | 'guest';
 type Phase = 'idle' | 'solo' | 'host' | 'guest' | 'unknown';
@@ -9,7 +10,7 @@ const ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 
 @Component({
   selector: 'app-home',
-  imports: [Header],
+  imports: [Header, Hero],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

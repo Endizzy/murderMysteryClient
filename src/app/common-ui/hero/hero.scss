@@ -1,0 +1,338 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+  padding-top: var(--header-h);
+  overflow: hidden;
+}
+
+.hero-bg,
+.lamp {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-bg {
+  background:
+    linear-gradient(180deg, rgb(11 14 18 / 20%), var(--bg) 92%),
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgb(156 64 56 / 22%), transparent 60%);
+}
+
+.lamp {
+  background: radial-gradient(ellipse 42% 36% at 18% 30%, rgb(226 177 90 / 22%), transparent 70%);
+  // animation: drift 16s var(--ease) infinite alternate;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 2rem var(--m) 2.2rem;
+}
+
+.hero-kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  color: var(--muted);
+  font-family: var(--typewriter);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  width: 100%;
+  margin: 0;
+  font-family: var(--display);
+  font-size: var(--t-hero);
+  font-weight: 620;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+.line {
+  display: block;
+  animation: rise 0.8s var(--ease) both;
+}
+
+.line:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.lead {
+  width: min(46rem, 100%);
+  margin: 1.4rem 0 0;
+  color: #ddd4c6;
+  font-size: var(--t-lead);
+  animation: rise 0.8s var(--ease) 0.22s both;
+}
+
+.hero-actions,
+.chips {
+  animation: rise 0.8s var(--ease) 0.32s both;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.6rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  width: 100%;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-family: var(--typewriter);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition:
+    background-size 0.35s var(--ease),
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+.btn:hover {
+  background-size: 100% 100%;
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn-glow {
+  background-color: var(--accent);
+  background-image: linear-gradient(#fff6e4, #fff6e4);
+  color: #1a140c;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  background-image: linear-gradient(rgb(226 177 90 / 16%), rgb(226 177 90 / 16%));
+  color: var(--ink);
+  border-color: rgb(226 177 90 / 45%);
+}
+
+.reel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+}
+
+.reel-track {
+  display: flex;
+  width: max-content;
+  padding-block: 1.15rem 1.35rem;
+  animation: reel 36s linear infinite;
+}
+
+.reel-set {
+  display: flex;
+  flex: none;
+}
+
+.cinema-line {
+  width: 100%;
+  height: 28px;
+  background-image: url('/images/police-line_cropped.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.reel figure {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: clamp(250px, 26vw, 340px);
+  min-height: 0;
+  margin: 0 1.15rem 0 0;
+  padding: 0.55rem 0.55rem 0.35rem;
+  overflow: visible;
+  background: linear-gradient(180deg, #f8f3ea, #efe3d0);
+  box-shadow:
+    0 0 0 1px rgb(88 68 40 / 16%),
+    0 18px 32px rgb(0 0 0 / 34%);
+}
+
+.reel figure:nth-child(odd) {
+  rotate: -1.15deg;
+}
+
+.reel figure:nth-child(even) {
+  rotate: 1.05deg;
+}
+
+.reel .shot {
+  width: 100%;
+  height: clamp(150px, 15vw, 200px);
+  min-height: 0;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1px rgb(42 32 22 / 18%);
+  animation: ken-pan 18s ease-in-out infinite alternate;
+}
+
+.reel figcaption {
+  position: static;
+  margin: 0;
+  padding: 0.5rem 0.2rem 0.2rem;
+  color: #3a2f26;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.reel figure:nth-child(2) .shot { animation-delay: -4s; }
+.reel figure:nth-child(3) .shot { animation-delay: -8s; }
+.reel figure:nth-child(4) .shot { animation-delay: -12s; }
+
+.shot-hall {
+  background-image: url('/images/shot-hall.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.shot-desk {
+  background-image: url('/images/shot-desk.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.shot-note {
+  background-image: url('/images/shot-note.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.shot-window {
+  background-image: url('/images/shot-window.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@keyframes reel {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ken-pan {
+  from { background-position: 42% 50%; }
+  to { background-position: 58% 44%; }
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
+
+  .hero-kicker {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .hero-copy {
+    padding-top: 1.4rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reel figure {
+    width: min(78vw, 300px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line,
+  .lead,
+  .hero-actions,
+  .chips,
+  .lamp,
+  .reel .shot,
+  .reel-track {
+    animation: none;
+  }
+
+  .reel-set[aria-hidden='true'] {
+    display: none;
+  }
+
+  .reel-set {
+    width: 100%;
+  }
+
+  .reel figure {
+    flex: 1;
+    width: auto;
+  }
+
+  .btn {
+    transition: none;
+  }
+}
